@@ -1,152 +1,42 @@
-p{
- font-stretch:condensed; 
+header{
+  width:100%;
+  background: #000000 url(https://i.ytimg.com/an/qvuasdt08aqoTN5qzpik0g/featured_channel.jpg?v=59fc80cd) no-repeat 5% 50%;
+  background-size: 120px 130px;
+  height: 120px ;
+  position: relative;
+  
+}
+.title{
+ font-size: 36px;
+ padding-top:10px;
  text-align: center;
-}
-h1{
-  text-decoration:underline;
-  font-family: sans-serif;
-  line-height: 1.5;
-  font-size:32px;
-}
-figcaption{
-  font-style: italic;
-  text-align: ;
-}
-h2{
-white-space:nowrap;
+ color :#FFFFFF;
+ font-family: serif;
+ font-style: italic;
+ padding: 10px
 
 }
-.rip{
-  float:left;
-
+.menu{
+ font-size: 12px;
+ padding-top: 5px;
+ text-align: right;
+color :#00FF7F;
+}
+.mein-img{
+  background: url(https://naked-science.ru/wp-content/uploads/2018/04/field_image_istock-516189065.jpg) no-repeat;
+  width:100%;
+  background-size: cover;
+  height: 540px ;
+  font-family: serif;
+  font-style:italic;
+  font-size:100px;
+  text-align: center;
+  color:#00FF00;
+  text-shadow: #FC0 1px 0 10px;
+  text-decoration:blink;
+  padding-top:100px;
+}
+video{
   
 }
 
-
-.rot{
-  text-align: center;
- 
-}
-@keyframes spin {
-    from {transform:rotate(0deg);}
-    to {transform:rotate(360deg);}
-}
-
-
-}
-div{
-  margin: 0;
-  overflow: hidden;
-  background: black;
-  }
-
-.stage {
-  position: relative;
-  width: 100%;
-  height: 350px;
-  overflow: hidden;
-  background: steelblue;
-  box-shadow: 0 -400px 300px -300px orangered inset;
-  animation: sky-change 15s infinite linear;
-  }
-
-.sun {
-  position: absolute;
-  left: 0;
-  bottom: -30%;
-  width: 10em;
-  height: 10em;
-  margin-left: -2.5em;
-  margin-top: 0;
-  background: orangered;
-  border-radius: 50%;
-  box-shadow: 0 0 20px orange;
-  animation: 15s infinite linear;
-  animation-name: sun-move, sun-color;
-  }
-
-.grass {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: -5px;
-  left: 0;
-  background: url(//img-fotki.yandex.ru/get/5000/5091629.98/0_7a92d_7ece70d7_XL.png) no-repeat center bottom;
-}
-
-@keyframes sky-change {
-  0% {
-    background: darkslateblue;
-  }
-  50% {
-    background: skyblue;
-    box-shadow: 0 -400px 300px -300px steelblue inset;
-  }
-  85% {
-    background: darkslateblue;
-    box-shadow: 0 -400px 300px -300px orangered inset;
-  }
-  100% {
-    background: darkslateblue;
-  }
-}
-
-@keyframes sun-move {
-  0% {
-  }
-  10% {
-    margin-left: -4.5em;
-  }
-  20% {
-    margin-left: -5.5em;
-  }
-  30% {
-    margin-left: -6em;
-  }
-  40% {
-    margin-left: -4.5em;
-  }
-  50% {
-    left: 50%;
-    bottom: 75%;
-    width: 5em;
-    height: 5em;
-    margin-left: -2.5em;
-  }
-  60% {
-    margin-left: 1.5em;
-  }
-  70% {
-    margin-left: 3.5em;
-  }
-  80% {
-    margin-left: 2.5em;
-  }
-  90% {
-    margin-left: 1em;
-  }
-  100% {
-    left: 98%;
-    margin-left: -2.5em;
-  }
-}
-
-@keyframes sun-color {
-  20% {
-    background: orange;
-  }
-  40% {
-    background: gold;
-    box-shadow: 0 0 35px gold;
-  }
-  60% {
-    background: yellow;
-    box-shadow: 0 0 35px yellow;
-  }
-  80% {
-  background: orange;
-  }
-}
-
-
-</style>
