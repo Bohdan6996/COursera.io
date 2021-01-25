@@ -1,49 +1,45 @@
-header{
-  width:100%;
-  background: #000000 url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu19A686SlYxot9ygZ0rDJcwxKElbBm88v9A&usqp=CAU) no-repeat 5% 50%;
-  background-size: 160px 120px;
-  height: 120px ;
-  position: relative;
-  
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1000;
 }
-.title{
- font-size: 36px;
- padding-top:10px;
- text-align: center;
- color :#FFFFFF;
- font-family: serif;
- font-style: italic;
- padding: 10px
-
+.content-container {
+	height: 72px;
+	background-color: #ffffff;
+	margin: auto;
+  box-shadow: 0px 0px 16px rgba(38, 38, 38, 0.16);
+  display: flex;
+  justify-content: space-between;
 }
-.menu{
- font-size: 12px;
- padding-top: 5px;
- text-align: right;
-color :#00FF7F;
+.all-item{
+  display: flex;
 }
-.mein-img{
-  background: url(https://naked-science.ru/wp-content/uploads/2018/04/field_image_istock-516189065.jpg) no-repeat;
-  width:100%;
-  background-size: cover;
-  height: 540px ;
-  font-family: serif;
-  font-style:italic;
-  font-size:100px;
-  text-align: center;
-  color:#00FF00;
-  text-shadow: #FC0 1px 0 10px;
-  text-decoration:blink;
-  padding-top:100px;
+.logo{
+  margin: 0px 0 0 -1px;
+  padding: 15px;
 }
-.main-text{
-text-align: center;
-background:#FFE4E1;
- font-size: 36px;
- font-family: Georgia, serif;
- text-align: justify;
- margin: 20px;
- padding: 10px;
+.search{
+  margin: 20px 18px 0 0;
+}
+.trash{
+  margin: 20px 15px 0 0;
+}
+button {
+  border-radius: 4px;
+  transition: border-radius 0.5s ease-in;
 }
 
-
+button:hover {
+  border-radius: 16px;
+}
+.main-list {
+	margin: 57px auto 0 auto;
+	padding-right: 3px;
+}
+.main-text {
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 150px;
+}
