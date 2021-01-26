@@ -1,3 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+@media screen and (max-width: 425px) {
+	.secsion {
+		display: block;
+		height: 250px;
+	}
+}
 header {
 	position: fixed;
 	width: 100%;
@@ -26,13 +39,14 @@ header {
 .trash{
   margin: 20px 15px 0 0;
 }
-button {
-  border-radius: 4px;
-  transition: border-radius 0.5s ease-in;
-}
 
-button:hover {
-  border-radius: 16px;
+@media screen and (max-width: 425px) {
+	.search {
+		display: none;
+	}
+	.trash {
+		margin: 16px 16px 0 0;
+	}
 }
 .main-list {
 	margin: 57px auto 0 auto;
@@ -43,3 +57,56 @@ button:hover {
 	font-size: 22px;
 	line-height: 150px;
 }
+
+.main-list-body {
+	display: flex;
+	flex-wrap: wrap;
+}
+.secsion {
+	margin-top: 15px;
+	cursor: pointer;
+	margin: 0 -3px;
+	padding: 0 3px;
+}.secsion figure {
+	overflow: hidden;
+}
+.secsion:hover {
+	background-color: #ffe8e8;
+}
+.secsion .ibg {
+	transform: scale(1);
+	transition: transform 0.5s ease 0s;
+}
+.secsion:hover .ibg {
+	transform: scale(1.05);
+	transition: transform 0.5s ease 0s;
+}
+.main-item-1{
+	text-decoration: none;
+	color: #1d1d1d;
+	height: 0;
+}
+.mein-item-2{
+	margin: 4px 0 0 0;
+	font-size: 14px;
+	line-height: 21px;
+	color: #626262;
+}
+.mein-item-3{
+	margin: 4px 0 0 0;
+	padding-bottom: 20px;
+	font-size: 12px;
+	line-height: 21px;
+	color: #1d1d1d;
+}
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.ibg img {
+	display: none;
+}
+
+
+
