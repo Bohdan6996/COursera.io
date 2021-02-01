@@ -179,6 +179,7 @@
 }
 .footer-text-1 {
 	margin-bottom: 30px;
+
 }
 .footer-text-2{
 	margin: 35px 0 0 0;
@@ -188,6 +189,11 @@
 	margin: 0 0 23px 0;
 	height: 16px;
 }
+.item{
+	text-align:right	;
+	float:none;
+}
+
 @media screen and (max-width: 767px) {
 	.footer-text-2 {
 		margin: 0 0 0 0;
@@ -203,6 +209,7 @@
 	line-height: 15px;
 	text-decoration: none;
 	color: #ffffff;
+
 }
 .blok_4 {
 	flex-basis: 128px;
