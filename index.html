@@ -1,257 +1,204 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
-* {
-	margin: 0;
-	padding: 0;
-}
-.wrap {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	margin: auto;
-	font-family: "Roboto", sans-serif;
-}
-/*header---------------------------------------------------------------------*/
-@media screen and (max-width: 425px) {
-	.main-list-image {
-		display: block;
-		height: 250px;
-	}
-}
-#h {
-	position: absolute;
-	top: 0;
-}
-.header {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-}
-.content-container {
-	height: 72px;
-	background-color: #ffffff;
-	margin: auto;
-  box-shadow: 0px 0px 16px rgba(38, 38, 38, 0.16);
-  display: flex;
-  justify-content: space-between;
-}
-.all-item{
-  display: flex;
-}
-.logo{
-  margin: 0px 0 0 -1px;
-  padding: 15px;
-}
-.search{
-  margin: 20px 18px 0 0;
-}
-.trash{
-  margin: 20px 15px 0 0;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.2.1/flexboxgrid2.min.css">
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+    <div id="h"></div>
+    <div class="wrap">
+        <!--header-->
+        <header class="header">
+         
+        <div class="container">
+            <div class = "content-container">
+                <div class = "logo">
+                    <p>BODYA FOOD</p>
+                </div>
+                <div class ="all-item">
+                
+                <div class ='trash'>
+                   <button> <img  src ="data:image/png;base64,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"alt="sign-in" width="21" height="22"></button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+    <!--MAIN LIST---------------------------------------------------------------------------------------------------------->
+  <main class="main-list">
+    <div class ="container">
+<div class ="main-text">
+    Ресторани Черкас
+</div>
+<div class="main-list-body"></div>
+<div class="raw">
+    <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="secsion">
+            <figure>
+                <a href="https://www.mcdonalds.com/ua/uk-ua.html?utm_source=Google_Search_All_Brands&utm_medium=Search&utm_campaign=McDonalds_Brand_Search_01_01_2021&gclid=Cj0KCQiAx9mABhD0ARIsAEfpavQIKGP4dT5nMqRcJVSjb9ShTY_FpNv1bpsERmE9_P9TbfXG-0bA2U4aAjRlEALw_wcB"></a> <img src ="https://kurs.if.ua/media/gallery/full/p/o/poker-player-eat-1k-worth-mcdonalds-food-36-hours.jpg.pagespeed.ce.GtLr8yt91A.jpg" class="main-list-image ibg" alt=Ресторан Коктейль>
+            <figcaption>
+                <div class="main-item-1">
+                    <a href="" target="newtab">MCdonalds</a>
+                </div>
+                <div class = "mein-item-2"></div>
+                <div class = "mein-item-3"></div>
+            </figcaption>
+        </figure>
+        </div>
+    </div>
+    <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="secsion">
+            <figure>
+                
+               <a href="http://yoshi-fujiwara.ua/uk/golovna/"></a> <img src ="https://tomato.ua/image/resize/storage/restaurants/587e4b7379b5da00344e9ab2/1484671859587e4b736fc48_ebf5169ea4b4199a1741581320999688.jpg?w=1200&h=1200" class="main-list-image ibg" alt=Ресторан Коктейль>
+           
+            <figcaption>
+                <div class="main-item-1">
+                    <a href="http://yoshi-fujiwara.ua/uk/golovna/" target="newtab">Ресторан Fujiwara Yoshi</a>
+                </div>
+                <div class = "mein-item-2"></div>
+                <div class = "mein-item-3"></div>
+            </figcaption>
+        </figure>
+        </div>
+    </div>
+    <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="secsion">
+            <figure>
+               <a href ="https://misteram.com.ua/cherkassy/kokteyl"></a> <img src ="https://tomato.ua/image/resize/storage/restaurants/5902784a5f17204f55231929/14933340905902784adf146_b207e196fdc85f08e6292aa4ba572835.jpg?w=1200&h=1200" class="main-list-image ibg" alt=Ресторан Коктейль>           
+            <figcaption>
+                <div class="main-item-1">
+                    <a href="https://misteram.com.ua/cherkassy/kokteyl" target="newtab">Ресторан Коктейль
+                    </a>
+                </div>
+                <div class = "mein-item-2"></div>
+                <div class = "mein-item-3"></div>
+            </figcaption>
+        </figure>
+        </div>
+    </div>
+    <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="secsion">
+            <figure>
+               <a href="https://kolbasoff.ru/"></a> <img src ="https://tomato.ua/image/resize/storage/restaurants/590277ed5f17204f552318c0/16040928775f9c83cda3031_5f9c83c39099d4.89724265.jpeg?w=1200&h=1200" class="main-list-image ibg" alt=Ресторан Колбасофф>           
+            <figcaption>
+                <div class="main-item-1">
+                    <a href="https://kolbasoff.ru/" target="newtab">Ресторан Колбасофф</a>
+                </div>
+                <div class = "mein-item-2"></div>
+                <div class = "mein-item-3"></div>
+            </figcaption>
+        </figure>
+        </div>
+    </div>
+    <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="secsion">
+            <figure>
+               <a href="https://www.facebook.com/elfaro.ck.ua/"></a> <img src ="https://tomato.ua/image/resize/storage/restaurants/587e4bda79b5da00344e9b22/1484671962587e4bda6aa36_70cf0f1738ab562e915c0f4194e50595.jpg?w=1200&h=1200" class="main-list-image ibg" alt=Ресторан Faro del Porto>           
+            <figcaption>
+                <div class="main-item-1">
+                    <a href="https://www.facebook.com/elfaro.ck.ua/" target="newtab">Ресторан Faro del Porto</a>
+                </div>
+                <div class = "mein-item-2"></div>
+                <div class = "mein-item-3"></div>
+            </figcaption>
+        </figure>
+        </div>
+    </div>
+    <div class = "col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="secsion">
+            <figure>
+                <img src ="https://tomato.ua/image/resize/storage/restaurants/590279295f17204f552319bb/149333431359027929826e1_fea83d49235806b2f69db88c2eda2221.jpg?w=1200&h=1200" class="main-list-image ibg" alt=Ресторан Чайка
+                >           
+            <figcaption>
+                <div class="main-item-1">
+                    <a href="https://uber-eats-2.netlify.app/" target="newtab">Ресторан Чайка
+                    </a>
+                </div>
+                <div class = "mein-item-2"></div>
+                <div class = "mein-item-3"></div>
+            </figcaption>
+        </figure>
+        </div>
+    </div>
+</div>
+    </div>
+  </main>
+    <!--FOOTER    ---------------------------------------------->
+    <footer class= "footer">
+        <div class="container">
+            <div class ="footer-logo-1">
+              <figure class ="footer-logo">
+                  <p>BODYA FOOD</p>
+              </figure>
+            </div>
+              <div class = 'line'></div>
+              <div class =" footer-text-1">
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="social-network">
+								<p><span>#</span>BODYA FOOD</p>
+                    <div class ="contact-social">
+                        <a href ="https://www.instagram.com/" class= "contact-social-item"><img src ="https://pngicon.ru/file/uploads/instagram.png" width="40" height="40" alt ="inst" title = "instagram"></a>
+                        <a href ="#" class= "contact-social-item"><img src ="https://image.flaticon.com/icons/png/512/121/121502.png" width="40" height="40" alt ="fcb" title = "Facebook"></a>
+                        <a href ="#" class= "contact-social-item"><img src ="https://i.pinimg.com/originals/99/f0/3f/99f03fdee90d871d3d1e718c82feb8be.png" width="40" height="40" alt ="tg" title = "Telegram"></a>
+                    </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-4 col-lg-4">
+        <div class="footer-text-2">
+            <div class='item'><a href="#">Про Bodya Food</a></div>
+            <div class='item'><a href="https://www.work.ua/ru/">Ваканції</a></div>
+            <div class='item'><a href="https://goo.gl/maps/SAhB6c25vRjGMg6X8">Геолокація</a></div>
+        </div>
+            </div>
+            
+            <div class="col-xs-12 col-md-4 col-lg-4">
+                <div class="footer-text-2">
+                    <div class='item'><a href="#">FAQs</a></div>
+                </div>
+                    </div>
+                    <div class="line"></div>
+				<div class="footer-text-3">
+            <figure>
+                <a href="https://www.youtube.com/?gl=UA&hl=ru"> <img src="https://miro.medium.com/max/11789/1*V9-OPWpauGEi-JMp05RC_A.png" alt="App store" width="121" height="40"></a>
 
-@media screen and (max-width: 425px) {
-	.search {
-		display: none;
-	}
-	.trash {
-		margin: 16px 16px 0 0;
-	}
-}
-
-
-/*------MAIN--------------------------------------------------------------------------*/
-.main-list {
-	margin: 57px auto 0 auto;
-	padding-right: 3px;
-}
-.main-text {
-	font-weight: normal;
-	font-size: 22px;
-	line-height: 150px;
-}
-
-.main-list-body {
-	display: flex;
-	flex-wrap: wrap;
-}
-.secsion {
-	margin-top: 15px;
-	cursor: pointer;
-	margin: 0 -3px;
-	padding: 0 3px;
-}.secsion figure {
-	overflow: hidden;
-}
-.secsion:hover {
-	background-color: #ffe8e8;
-}
-.secsion .ibg {
-	transform: scale(1);
-	transition: transform 0.5s ease 0s;
-}
-.secsion:hover .ibg {
-	transform: scale(1.05);
-	transition: transform 0.5s ease 0s;
-}
-.main-item-1 {
-	font-size: 16px;
-	line-height: 24px;
-	margin: 12px 0 0 0;
-}
-.main-item-1 a {
-	text-decoration: none;
-	color: #1d1d1d;
-	height: 0;
-}
-.main-item-2 {
-	margin: 4px 0 0 0;
-	font-size: 14px;
-	line-height: 21px;
-	color: #626262;
-}
-.main-item-3 {
-	margin: 4px 0 0 0;
-	padding-bottom: 20px;
-	font-size: 12px;
-	line-height: 21px;
-	color: #1d1d1d;
-}
-
-.ibg {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-.ibg img {
-	display: none;
-}
-.main-list-image {
-	display: block;
-	height: 256px;
-}
-/*-------_FOOOTER________________________*/
-.footer {
-	min-height: 552px;
-	margin: 80px auto 0;
-	background: #262626;
-}
-.footer-logo-1{
-	height: 116px;
-}
-.footer-logo{
-	padding: 54px 0 0 2px;
-	margin-left: -4px;
-}
-.line {
-	height: 1px;
-	background: #ffffff;
-	opacity: 0.4;
-}
-
-
-.footer-text-1{
-	position: relative;
-	margin-left: -8px;
-	min-height: 20px;
-	display: flex;
-	flex-wrap: wrap;
-}
-.social-network span {
-		font-size: 16px;
-		line-height: 19px;
-		color: #49a144;
-	}
-.social-network p {
-	height: 19px;
-	font-size: 16px;
-	line-height: 19px;
-	color: #ffffff;
-}
-.contact-social {
-	padding-top: 17px;
-}
-.contact-social-item {
-	margin-right: 6px;
-}
-.contacts-social-item:last-child {
-	margin-right: 0px;
-}
-.footer-text-1 {
-	margin-bottom: 30px;
-
-}
-.footer-text-2{
-	margin: 35px 0 0 0;
-
-}
-.footer-text-2 .item {
-	margin: 0 0 23px 0;
-	height: 16px;
-}
-.item{
-	text-align:right	;
-	float:none;
-}
-
-@media screen and (max-width: 767px) {
-	.footer-text-2 {
-		margin: 0 0 0 0;
-	}
-	.footer-text-1 {
-		margin-bottom: 20px;
-	}
-}
-.footer-text-2 .item a {
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13px;
-	line-height: 15px;
-	text-decoration: none;
-	color: #ffffff;
-
-}
-.blok_4 {
-	flex-basis: 128px;
-}
-.footer-text-3{
-	height: 120px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.footer-text-3 figure {
-	padding: 20px;
-}
-.footer-text-3 figure:hover{
-	opacity: 1;
-	box-shadow: 0 0 3px rgba(0,0,0,0.3);
-}
-@media screen and (max-width: 767px) {
-	.footer-text-3 {
-		height: 84px;
-	}
-
-	.footer-text-3 figure {
-		transform: scale(0.9, 0.9);
-		margin: 0 0 0 12.5px;
-	}
-}
-.footer-text-4 {
-	margin-left: -8px;
-}
-.section-4{
-	display: flex;
-	flex-wrap: wrap;
-}
-.section-4-item {
-	margin: 20px 0 12px 0;
-	display: flex;
-	align-items: center;
-}
-.footer-text-4 a {
-	font-size: 12px;
-	line-height: 13px;
-	color: #ffffff;
-	text-decoration: none;
-}
+            </figure>
+            <figure>
+                <a href="https://www.youtube.com/?gl=UA&hl=ru"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1200px-Google_Play_Store_badge_EN.svg.png" alt="App store" width="121" height="40"></a>
+            </figure>
+            </div>
+            <div class ="line"></div>
+            <div class="footer-text-4">
+                <div class="section-4">
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="section-4-item">
+                            <a href="#">© 2021 BODYAFOOD Technologies Inc.</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="section-4-item">
+                            <a href="#">Обработка персональных данных</a>
+                        </div>
+                    </div>
+                
+                    <div class="col-xs-12 col-md-4 col-lg-4">
+                        <div class="section-4-item">
+                            <a href="#">Пользовательское соглашение</a>
+                        </div>
+                        </div>
+                        </div>
+            </div>
+        </div>
+    </footer>
+    
+  </main>
+</div>
+<script src="js\jquery-3.3.1.slim.min.js"></script>
+<script src="js/script.js"></script>  
+</body>
+</html>
